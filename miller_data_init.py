@@ -130,8 +130,11 @@ def dataset_init(strategy = 'simple',
     Y = np.array(Y)
 
     if concat_experiments:
-        X = X.reshape(-1, *X.shape[2:])
-        Y = Y.reshape(-1, *Y.shape[2:])
+        X = np.concatenate([X[:,0], X[:,1]], axis=-2)
+        if strategy=='simple':
+            Y = np.concatenate([Y[:,0], Y[:,1]], axis=-1)
+        else:
+            Y = np.concatenate([Y[:,0], Y[:,1]], axis=-2)
 
     return X, Y, extra_info
 
