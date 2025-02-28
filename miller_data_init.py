@@ -24,7 +24,8 @@ def dataset_init(strategy = 'simple',
                     concat_experiments = False,
                       dataset_path = 'motor_imagery.npz',
                         sub = 0,
-                          channels = np.arange(46), normalize = True):
+                          channels = np.arange(46),
+                            normalize = True):
     '''
     Parameters:
 
